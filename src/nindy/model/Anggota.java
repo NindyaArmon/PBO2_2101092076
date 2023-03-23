@@ -10,36 +10,36 @@ package nindy.model;
  * @author hp
  */
 public class Anggota {
-    private String kodeanggota;
-    private String namaanggota;
+    private String kodeAnggota;
+    private String namaAnggota;
     private String alamat;
-    private String jeniskelamin;
+    private String jenisKelamin;
     
     public  Anggota (){
 
     }
 
     public Anggota(String kodeanggota, String namaanggota, String alamat, String jeniskelamin) {
-        this.kodeanggota = kodeanggota;
-        this.namaanggota = namaanggota;
+        this.kodeAnggota = kodeanggota;
+        this.namaAnggota = namaanggota;
         this.alamat = alamat;
-        this.jeniskelamin = jeniskelamin;
-    }
-    
-    public String getKodeanggota() {
-        return kodeanggota;
+        this.jenisKelamin = jeniskelamin;
     }
 
-    public void setKodeanggota(String kodeanggota) {
-        this.kodeanggota = kodeanggota;
+    public String getKodeAnggota() {
+        return kodeAnggota;
     }
 
-    public String getNamaanggota() {
-        return namaanggota;
+    public void setKodeAnggota(String kodeAnggota) {
+        this.kodeAnggota = kodeAnggota;
     }
 
-    public void setNamaanggota(String namaanggota) {
-        this.namaanggota = namaanggota;
+    public String getNamaAnggota() {
+        return namaAnggota;
+    }
+
+    public void setNamaAnggota(String namaAnggota) {
+        this.namaAnggota = namaAnggota;
     }
 
     public String getAlamat() {
@@ -50,11 +50,11 @@ public class Anggota {
         this.alamat = alamat;
     }
 
-    public String getJeniskelamin() {
-        return jeniskelamin;
+    public String getJenisKelamin() {
+        return jenisKelamin;
     }
 
-    public void setJeniskelamin(String jeniskelamin) {
-        this.jeniskelamin = jeniskelamin;
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
     }
 }
