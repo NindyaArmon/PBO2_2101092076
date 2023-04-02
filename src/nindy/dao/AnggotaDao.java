@@ -8,6 +8,7 @@ package nindy.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import nindy.model.Anggota;
 
 /**
@@ -15,5 +16,10 @@ import nindy.model.Anggota;
  * @author hp
  */
 public interface AnggotaDao {
-    void insert(Connection con, Anggota anggota) throws Exception;
+    public void insert(Connection con, Anggota anggota) throws Exception;
+    public void update(Connection con, Anggota anggota) throws Exception;
+    public void delete(Connection con, Anggota anggota) throws Exception;
+    public Anggota getAnggota(Connection con, String kode) throws Exception;
+    public List<Anggota> getAllAnggota(Connection con) throws Exception;
+    
 }
