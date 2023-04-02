@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import nindy.dao.AnggotaDao;
 import nindy.dao.AnggotaDaoImpl;
 import nindy.dao.FormAnggota;
@@ -24,13 +25,14 @@ public class AnggotaController {
     private Anggota anggota;
     private AnggotaDao anggotaDao;
     private Connection con;
-    private Koneksi koneksi;
+    private Koneksi k;
     
     public AnggotaController(FormAnggota formanggota){
         try {
             this.formAnggota = new FormAnggota();
             anggotaDao = new AnggotaDaoImpl();
             con = new Koneksi().getKoneksi();
+            k = new Koneksi();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AnggotaController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -38,9 +40,27 @@ public class AnggotaController {
         }
     }
     
-    public void bersihForm(){
+    public void clearForm(){
         formAnggota.getTxtKodeAnggota().setText("");
         formAnggota.getTxtNamaAnggota().setText("");
+    }
+    
+    public void insert(){
+        try {
+            anggota = new Anggota();
+            anggota.setKodeAnggota(
+                    formAnggota.getTxtKodeAnggota().getText());
+            anggota.setNamaAnggota(
+                    formAnggota.getTxtNamaAnggota().getText());
+            anggota.setAlamat(
+                    formAnggota.getTxtAlamat().getText());
+            anggota.setJenisKelamin(
+                    formAnggota.getCboJenisKelamin().getSelectedItem.toString());
+            anggotaDao.insert(con, anggota);
+            JOptionPane.showMessageDialog(formAnggota, "Entri OK");
+        } catch (Exception ex) {
+            Logger.getLogger(AnggotaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void isiCboJenisKelamin(){
