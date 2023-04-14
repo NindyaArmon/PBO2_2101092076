@@ -8,6 +8,7 @@ package nindy.dao;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import nindy.controller.AnggotaController;
 
 /**
  *
@@ -18,8 +19,13 @@ public class FormAnggota extends javax.swing.JFrame {
     /**
      * Creates new form FormAnggota
      */
+    AnggotaController controller;
     public FormAnggota() {
-        initComponents();    
+        initComponents(); 
+        controller = new AnggotaController(this);
+        controller.clearForm();
+        controller.tampil();
+        
     }
 
     public JComboBox<String> getCboJenisKelamin() {
@@ -116,6 +122,11 @@ public class FormAnggota extends javax.swing.JFrame {
         jLabel4.setBounds(30, 160, 110, 20);
 
         btnInsert.setText("Insert");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnInsert);
         btnInsert.setBounds(30, 220, 73, 29);
 
@@ -127,7 +138,7 @@ public class FormAnggota extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Kode Anggota", "Nama Anggota", "Alamat", "Jenis Kelamin"
             }
         ));
         jScrollPane1.setViewportView(tblAnggota);
@@ -136,6 +147,11 @@ public class FormAnggota extends javax.swing.JFrame {
         jScrollPane1.setBounds(30, 280, 670, 402);
 
         cboJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboJenisKelamin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboJenisKelaminActionPerformed(evt);
+            }
+        });
         getContentPane().add(cboJenisKelamin);
         cboJenisKelamin.setBounds(200, 160, 160, 26);
 
@@ -159,7 +175,8 @@ public class FormAnggota extends javax.swing.JFrame {
         getContentPane().add(btnEdit);
         btnEdit.setBounds(640, 220, 59, 29);
 
-        pack();
+        setSize(new java.awt.Dimension(805, 770));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlamatActionPerformed
@@ -169,6 +186,14 @@ public class FormAnggota extends javax.swing.JFrame {
     private void txtKodeAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKodeAnggotaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKodeAnggotaActionPerformed
+
+    private void cboJenisKelaminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboJenisKelaminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboJenisKelaminActionPerformed
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInsertActionPerformed
 
     /**
      * @param args the command line arguments
