@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import nindy.dao.AnggotaDao;
 import nindy.dao.AnggotaDaoImpl;
-import nindy.dao.FormAnggota;
+import nindy.view.FormAnggota;
 import nindy.dao.Koneksi;
 import nindy.model.Anggota;
 
