@@ -26,9 +26,17 @@ public class FormBuku extends javax.swing.JFrame {
         controller.clearForm();
         controller.tampil();
     }
-    
-    public JTable getTblAnggota() {
+
+    public JTable getTblBuku() {
         return tblBuku;
+    }
+
+    public JTextField getTxtJudul() {
+        return txtJudul;
+    }
+
+    public JTextField getTxtKodebuku() {
+        return txtKodebuku;
     }
 
     public JTextField getTxtPenerbit() {
@@ -38,14 +46,7 @@ public class FormBuku extends javax.swing.JFrame {
     public JTextField getTxtPengarang() {
         return txtPengarang;
     }
-
-    public JTextField getTxtJudulbuku() {
-        return txtJudulbuku;
-    }
     
-    public JTextField getTxtKodebuku() {
-        return txtJudulbuku;
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,7 +61,7 @@ public class FormBuku extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtJudulbuku = new javax.swing.JTextField();
+        txtJudul = new javax.swing.JTextField();
         txtPengarang = new javax.swing.JTextField();
         txtKodebuku = new javax.swing.JTextField();
         txtPenerbit = new javax.swing.JTextField();
@@ -125,6 +126,11 @@ public class FormBuku extends javax.swing.JFrame {
         });
 
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         tblBuku.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -159,7 +165,7 @@ public class FormBuku extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnCancel))
                             .addComponent(txtKodebuku)
-                            .addComponent(txtJudulbuku)
+                            .addComponent(txtJudul)
                             .addComponent(txtPengarang)
                             .addComponent(txtPenerbit))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +188,7 @@ public class FormBuku extends javax.swing.JFrame {
                     .addComponent(btnCari))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtJudulbuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -243,6 +249,11 @@ public class FormBuku extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKodebukuActionPerformed
 
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -291,7 +302,7 @@ public class FormBuku extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblBuku;
-    private javax.swing.JTextField txtJudulbuku;
+    private javax.swing.JTextField txtJudul;
     private javax.swing.JTextField txtKodebuku;
     private javax.swing.JTextField txtPenerbit;
     private javax.swing.JTextField txtPengarang;
