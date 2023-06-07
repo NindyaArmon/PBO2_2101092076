@@ -93,6 +93,20 @@ public class AnggotaController {
         }
     }
     
+    public void tabelKlik(){
+        try {
+            String kode = formAnggota.getTblAnggota()
+                    .getValueAt(formAnggota.getTblAnggota().getSelectedRow(),0).toString();
+            anggota = anggotaDao.getAnggota(con, kode);
+            formAnggota.getTxtKodeAnggota().setText(anggota.getKodeAnggota());
+            formAnggota.getTxtNamaAnggota().setText(anggota.getNamaAnggota());
+            formAnggota.getTxtAlamat().setText(anggota.getAlamat());
+            formAnggota.getCboJenisKelamin().setSelectedItem(anggota.getJenisKelamin());
+        } catch (Exception ex) {
+            Logger.getLogger(AnggotaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void cari(){
         try {
             String kode = formAnggota.getTxtKodeAnggota().getText();
