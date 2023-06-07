@@ -11,19 +11,23 @@ package nindy.model;
  */
 public class Buku {
     private String kodebuku;
-    private String judulbuku;
+    private String judul;
     private String pengarang;
     private String penerbit;
     
-    public Buku(){
-        
+    //method construktor
+
+    public Buku() {
     }
-    public Buku(String kodebuku, String judulbuku, String pengarang, String penerbit) {
+
+    public Buku(String kodebuku, String judul, String pengarang, String penerbit) {
         this.kodebuku = kodebuku;
-        this.judulbuku = judulbuku;
+        this.judul = judul;
         this.pengarang = pengarang;
         this.penerbit = penerbit;
     }
+    
+    //method accessor
 
     public String getKodebuku() {
         return kodebuku;
@@ -33,12 +37,12 @@ public class Buku {
         this.kodebuku = kodebuku;
     }
 
-    public String getJudulbuku() {
-        return judulbuku;
+    public String getJudul() {
+        return judul;
     }
 
-    public void setJudulbuku(String judulbuku) {
-        this.judulbuku = judulbuku;
+    public void setJudul(String judul) {
+        this.judul = judul;
     }
 
     public String getPengarang() {
@@ -56,6 +60,7 @@ public class Buku {
     public void setPenerbit(String penerbit) {
         this.penerbit = penerbit;
     }
+
 }
 
    
