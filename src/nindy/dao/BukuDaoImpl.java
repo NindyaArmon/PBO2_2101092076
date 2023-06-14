@@ -20,7 +20,7 @@ public class BukuDaoImpl implements BukuDao{
 
     @Override
     public void insert(Connection con, Buku buku) throws Exception {
-        String sql = "insert into buku value(?,?,?,?)";
+        String sql = "insert into buku values(?,?,?,?)";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, buku.getKodebuku());
         ps.setString(2, buku.getJudul());
