@@ -21,7 +21,7 @@ public class PeminjamanDaoImpl implements PeminjamanDao {
     
     @Override
     public void insert(Connection con, Peminjaman peminjaman) throws Exception {
-        String sql = "insert into peminjaman value(?,?,?,?)";
+        String sql = "insert into peminjaman values(?,?,?,?)";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, peminjaman.getKodeanggota());
         ps.setString(2, peminjaman.getKodebuku());
@@ -32,24 +32,24 @@ public class PeminjamanDaoImpl implements PeminjamanDao {
     
     @Override
     public void update (Connection con, Peminjaman peminjaman) throws Exception {
-        String sql = "Update peminjaman set tglkembali=? " + 
+        String sql = "update peminjaman set tglkembali=? " + 
                 "where kodeanggota = ? and kodebuku = ? and tglpinjam = ?";
         PreparedStatement ps= con.prepareStatement(sql);
         ps.setString(1, peminjaman.getTglkembali());
         ps.setString(2, peminjaman.getKodeanggota());
-        ps.setString(3, peminjaman.getTglpinjam());
+        ps.setString(3, peminjaman.getKodebuku());
         ps.setString(4, peminjaman.getTglpinjam());
         ps.executeUpdate();
     }
     
     @Override
     public void delete (Connection con, Peminjaman peminjaman) throws Exception {
-        String sql = "delete from peminjaman " +
+        String sql = "delete from peminjaman " + 
                 "where kodeanggota = ? and kodebuku = ? and tglpinjam = ?";
         PreparedStatement ps= con.prepareStatement(sql);
         ps.setString(1, peminjaman.getKodeanggota());
 	ps.setString(2, peminjaman.getKodebuku());
-	ps.setString(1, peminjaman.getTglpinjam());
+	ps.setString(3, peminjaman.getTglpinjam());
         ps.executeUpdate();  
     }
     
@@ -89,6 +89,5 @@ public class PeminjamanDaoImpl implements PeminjamanDao {
             list.add(peminjaman);
         }
         return list;
-        
     }
 }
