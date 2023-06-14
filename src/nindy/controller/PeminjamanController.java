@@ -73,22 +73,21 @@ public class PeminjamanController {
         }
     }
 
-     public void insert(){
+    public void insert(){
         try {
             peminjaman = new Peminjaman();
             peminjaman.setKodeanggota(formPeminjaman.getCboKodeanggota().getSelectedItem().toString().split("-")[0]);
             peminjaman.setKodebuku(formPeminjaman.getCboKodebuku().getSelectedItem().toString());
-            peminjaman.setTglpinjam(formPeminjaman.getTxtTglpinjam().toString());
-            peminjaman.setTglkembali(formPeminjaman.getTxtTglkembali().toString());
+            peminjaman.setTglpinjam(formPeminjaman.getTxtTglpinjam().getText());
+            peminjaman.setTglkembali(formPeminjaman.getTxtTglkembali().getText());
             peminjamanDao.insert(con, peminjaman);
             JOptionPane.showMessageDialog(formPeminjaman, "Entri Data OKE");
         } catch (Exception ex) {
             Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
     }
 
-     public void getPeminjaman(){
+    public void getPeminjaman(){
         try {
             String kodeanggota = formPeminjaman.getTblPeminjaman().getValueAt(formPeminjaman.getTblPeminjaman().getSelectedRow(), 0).toString();
             String kodebuku = formPeminjaman.getTblPeminjaman().getValueAt(formPeminjaman.getTblPeminjaman().getSelectedRow(), 1).toString();
@@ -105,13 +104,13 @@ public class PeminjamanController {
             Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public void update(){
         try {
-            peminjaman = new Peminjaman();
             peminjaman.setKodeanggota(formPeminjaman.getCboKodeanggota().getSelectedItem().toString().split("-")[0]);
             peminjaman.setKodebuku(formPeminjaman.getCboKodebuku().getSelectedItem().toString());
-            peminjaman.setTglpinjam(formPeminjaman.getTxtTglpinjam().toString());
-            peminjaman.setTglkembali(formPeminjaman.getTxtTglkembali().toString());
+            peminjaman.setTglpinjam(formPeminjaman.getTxtTglpinjam().getText());
+            peminjaman.setTglkembali(formPeminjaman.getTxtTglkembali().getText());
             peminjamanDao.update(con, peminjaman);
             JOptionPane.showMessageDialog(formPeminjaman, "Update Data OKE");
         } catch (Exception ex) {
