@@ -55,11 +55,11 @@ public class BukuController {
             buku.setKodebuku(formBuku.getTxtKodebuku().getText());
             buku.setJudul(formBuku.getTxtJudul().getText());
             buku.setPengarang(formBuku.getTxtPengarang().getText());
-            buku.setJudul(formBuku.getTxtPenerbit().getText());
+            buku.setPenerbit(formBuku.getTxtPenerbit().getText());
             bukuDao.insert(con, buku);
             JOptionPane.showMessageDialog(formBuku, "Entri ok");
         } catch (Exception ex) {
-            Logger.getLogger(AnggotaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BukuController.class.getName()).log(Level.SEVERE, null, ex);
         }
    
     }
