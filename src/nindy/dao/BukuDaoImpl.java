@@ -34,12 +34,12 @@ public class BukuDaoImpl implements BukuDao{
     public void update(Connection con, Buku buku) throws Exception {
         String sql = "Update buku set judul=?, pengarang=?, penerbit=? where kodebuku = ?";
         PreparedStatement ps = con.prepareStatement(sql);
+       
         ps.setString(1, buku.getJudul());
         ps.setString(2, buku.getPengarang());
         ps.setString(3, buku.getPenerbit());
         ps.setString(4, buku.getKodebuku());
         ps.executeUpdate();
-        
     }
 
     @Override
