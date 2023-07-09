@@ -5,6 +5,9 @@
  */
 package nindy.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author hp
@@ -42,6 +45,9 @@ public class Pengembalian {
     }
 
     public String getTgldikembalikan() {
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
+        Date tgl = new Date();
+        tgldikembalikan = s.format(tgl);
         return tgldikembalikan;
     }
 
@@ -58,6 +64,7 @@ public class Pengembalian {
     }
 
     public double getDenda() {
+        denda = terlambat * 1000;
         return denda;
     }
 
