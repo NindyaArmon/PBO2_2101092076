@@ -16,6 +16,7 @@ public class Pengembalian {
     private String kodeanggota;
     private String kodebuku;
     private String tglpinjam;
+    private String tglkembali;
     private String tgldikembalikan;
     private int terlambat;
     private double denda;
@@ -42,6 +43,14 @@ public class Pengembalian {
 
     public void setTglpinjam(String tglpinjam) {
         this.tglpinjam = tglpinjam;
+    }
+
+    public String getTglkembali() {
+        return tglkembali;
+    }
+
+    public void setTglkembali(String tglkembali) {
+        this.tglkembali = tglkembali;
     }
 
     public String getTgldikembalikan() {
